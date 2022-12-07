@@ -1,0 +1,696 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>2108</width>
+    <height>959</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QFrame" name="Background">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>1871</width>
+      <height>941</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QFrame{
+background-color:rgb(0,0,0);
+}</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>570</y>
+       <width>201</width>
+       <height>91</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>40</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QFrame{
+color:rgb(255, 255, 255)
+}
+</string>
+     </property>
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt; font-weight:600;&quot;&gt;AUV Varuna 2.0&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Ground Control&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="debugMode">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>301</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(170, 170, 255);</string>
+     </property>
+     <property name="text">
+      <string>Debug : OFF</string>
+     </property>
+    </widget>
+    <widget class="QFrame" name="criticalData">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>70</y>
+       <width>300</width>
+       <height>431</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QFrame{
+    margin:2px; 
+    border:1px solid rgb(255, 255, 255);
+}</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QLabel" name="battery_level">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>300</width>
+        <height>50</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QFrame{
+	color:rgb(255, 255, 255);
+}</string>
+      </property>
+      <property name="text">
+       <string>&lt;p&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;Battery : 0 V&lt;/span&gt;&lt;/p&gt;</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="cpu_temp">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>50</y>
+        <width>300</width>
+        <height>50</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QFrame{
+	color:rgb(255, 255, 255);
+}</string>
+      </property>
+      <property name="text">
+       <string>&lt;p&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;CPU Temp : 23 C&lt;/span&gt;&lt;/p&gt;</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="camera">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>100</y>
+        <width>300</width>
+        <height>50</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QFrame{
+	color:rgb(255, 255, 255);
+}</string>
+      </property>
+      <property name="text">
+       <string>&lt;p&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;Camera : ON&lt;/span&gt;&lt;/p&gt;</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="depth">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>150</y>
+        <width>300</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QFrame{
+	color:rgb(255, 255, 255);
+}</string>
+      </property>
+      <property name="text">
+       <string>&lt;p&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;Depth : 0 m&lt;/span&gt;&lt;/p&gt;</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="velocity">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>200</y>
+        <width>300</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QFrame{
+	color:rgb(255, 255, 255);
+}</string>
+      </property>
+      <property name="text">
+       <string>&lt;p&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;Velocity : 0 m/s&lt;/span&gt;&lt;/p&gt;</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="acceleration">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>250</y>
+        <width>300</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QFrame{
+	color:rgb(255, 255, 255);
+}</string>
+      </property>
+      <property name="text">
+       <string>&lt;p&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;Accel : 0 m/s2&lt;/span&gt;&lt;/p&gt;</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="drag">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>300</y>
+        <width>300</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QFrame{
+	color:rgb(255, 255, 255);
+}</string>
+      </property>
+      <property name="text">
+       <string>&lt;p&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;Linear Drag : 0 N&lt;/span&gt;&lt;/p&gt;</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="distance">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>360</y>
+        <width>300</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QFrame{
+	color:rgb(255, 255, 255);
+}</string>
+      </property>
+      <property name="text">
+       <string>&lt;p&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;Distance : 0 m&lt;/span&gt;&lt;/p&gt;</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QFrame" name="frame">
+     <property name="geometry">
+      <rect>
+       <x>330</x>
+       <y>10</y>
+       <width>651</width>
+       <height>371</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QWidget { background-color: #eeeeec; }</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QWidget" name="verticalLayoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>-30</x>
+        <y>0</y>
+        <width>681</width>
+        <height>381</height>
+       </rect>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout"/>
+     </widget>
+    </widget>
+    <widget class="QFrame" name="frame_2">
+     <property name="geometry">
+      <rect>
+       <x>330</x>
+       <y>400</y>
+       <width>441</width>
+       <height>271</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QWidget { background-color: #eeeeec; }</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QWidget" name="verticalLayoutWidget_2">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>441</width>
+        <height>271</height>
+       </rect>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_2"/>
+     </widget>
+    </widget>
+    <widget class="QLabel" name="roll">
+     <property name="geometry">
+      <rect>
+       <x>990</x>
+       <y>20</y>
+       <width>201</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QFrame{
+	color:rgb(255, 255, 255);
+}</string>
+     </property>
+     <property name="text">
+      <string>&lt;p&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;Roll  : 0 deg&lt;/span&gt;&lt;/p&gt;</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="pitch">
+     <property name="geometry">
+      <rect>
+       <x>990</x>
+       <y>70</y>
+       <width>201</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QFrame{
+	color:rgb(255, 255, 255);
+}</string>
+     </property>
+     <property name="text">
+      <string>&lt;p&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;Pitch : 0 deg&lt;/span&gt;&lt;/p&gt;</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="yaw">
+     <property name="geometry">
+      <rect>
+       <x>990</x>
+       <y>120</y>
+       <width>201</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QFrame{
+	color:rgb(255, 255, 255);
+}</string>
+     </property>
+     <property name="text">
+      <string>&lt;p&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;Yaw  : 0 deg&lt;/span&gt;&lt;/p&gt;</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="ixx">
+     <property name="geometry">
+      <rect>
+       <x>200</x>
+       <y>740</y>
+       <width>151</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QFrame{
+	color:rgb(255, 255, 255);
+}</string>
+     </property>
+     <property name="text">
+      <string>&lt;p&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;Ixx : 0 &lt;/span&gt;&lt;/p&gt;</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="iyy">
+     <property name="geometry">
+      <rect>
+       <x>200</x>
+       <y>790</y>
+       <width>151</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QFrame{
+	color:rgb(255, 255, 255);
+}</string>
+     </property>
+     <property name="text">
+      <string>&lt;p&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;Iyy : 0 &lt;/span&gt;&lt;/p&gt;</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="izz">
+     <property name="geometry">
+      <rect>
+       <x>200</x>
+       <y>840</y>
+       <width>151</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QFrame{
+	color:rgb(255, 255, 255);
+}</string>
+     </property>
+     <property name="text">
+      <string>&lt;p&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;Izz : 0 &lt;/span&gt;&lt;/p&gt;</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="cg">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>780</y>
+       <width>181</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QFrame{
+	color:rgb(255, 255, 255);
+}</string>
+     </property>
+     <property name="text">
+      <string>&lt;p&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;CG : (0,0,0) &lt;/span&gt;&lt;/p&gt;</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="mass">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>830</y>
+       <width>181</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QFrame{
+	color:rgb(255, 255, 255);
+}</string>
+     </property>
+     <property name="text">
+      <string>&lt;p&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;Mass : 5 Kg &lt;/span&gt;&lt;/p&gt;</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="prop1">
+     <property name="geometry">
+      <rect>
+       <x>790</x>
+       <y>400</y>
+       <width>201</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QFrame{
+	color:rgb(255, 255, 255);
+}</string>
+     </property>
+     <property name="text">
+      <string>&lt;p&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;Prop 1 : 0 &lt;/span&gt;&lt;/p&gt;</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="prop2">
+     <property name="geometry">
+      <rect>
+       <x>950</x>
+       <y>400</y>
+       <width>201</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QFrame{
+	color:rgb(255, 255, 255);
+}</string>
+     </property>
+     <property name="text">
+      <string>&lt;p&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;Prop 2 : 0 &lt;/span&gt;&lt;/p&gt;</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="prop3">
+     <property name="geometry">
+      <rect>
+       <x>790</x>
+       <y>460</y>
+       <width>201</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QFrame{
+	color:rgb(255, 255, 255);
+}</string>
+     </property>
+     <property name="text">
+      <string>&lt;p&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;Prop 3 : 0 &lt;/span&gt;&lt;/p&gt;</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="prop4">
+     <property name="geometry">
+      <rect>
+       <x>940</x>
+       <y>460</y>
+       <width>201</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QFrame{
+	color:rgb(255, 255, 255);
+}</string>
+     </property>
+     <property name="text">
+      <string>&lt;p&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;Prop 4 : 0 &lt;/span&gt;&lt;/p&gt;</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="prop5">
+     <property name="geometry">
+      <rect>
+       <x>790</x>
+       <y>520</y>
+       <width>201</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QFrame{
+	color:rgb(255, 255, 255);
+}</string>
+     </property>
+     <property name="text">
+      <string>&lt;p&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;Prop 5 : 0 &lt;/span&gt;&lt;/p&gt;</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="prop6">
+     <property name="geometry">
+      <rect>
+       <x>940</x>
+       <y>520</y>
+       <width>201</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QFrame{
+	color:rgb(255, 255, 255);
+}</string>
+     </property>
+     <property name="text">
+      <string>&lt;p&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;Prop 6 : 0 &lt;/span&gt;&lt;/p&gt;</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="killSwitch_2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>520</y>
+       <width>301</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: red;</string>
+     </property>
+     <property name="text">
+      <string>Kill Switch</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="time">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>650</y>
+       <width>291</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QFrame{
+	color:rgb(255, 255, 255);
+}</string>
+     </property>
+     <property name="text">
+      <string>&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Time : 11:00 &lt;/span&gt;&lt;/p&gt;</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="flow1">
+     <property name="geometry">
+      <rect>
+       <x>330</x>
+       <y>670</y>
+       <width>201</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QFrame{
+	color:rgb(255, 255, 255);
+}</string>
+     </property>
+     <property name="text">
+      <string>&lt;p&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;Flow 1 : 0 m/s&lt;/span&gt;&lt;/p&gt;</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="flow2">
+     <property name="geometry">
+      <rect>
+       <x>550</x>
+       <y>670</y>
+       <width>201</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QFrame{
+	color:rgb(255, 255, 255);
+}</string>
+     </property>
+     <property name="text">
+      <string>&lt;p&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;Flow 2 : 0 m/s&lt;/span&gt;&lt;/p&gt;</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="rawvideo">
+     <property name="geometry">
+      <rect>
+       <x>1220</x>
+       <y>10</y>
+       <width>640</width>
+       <height>480</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QFrame{
+	color:rgb(255, 255, 255);
+}</string>
+     </property>
+     <property name="text">
+      <string>&lt;p&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;Raw Video&lt;/span&gt;&lt;/p&gt;</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="provideo">
+     <property name="geometry">
+      <rect>
+       <x>1220</x>
+       <y>510</y>
+       <width>640</width>
+       <height>480</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QFrame{
+	color:rgb(255, 255, 255);
+}</string>
+     </property>
+     <property name="text">
+      <string>&lt;p&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;Processed Video&lt;/span&gt;&lt;/p&gt;</string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>2108</width>
+     <height>29</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
