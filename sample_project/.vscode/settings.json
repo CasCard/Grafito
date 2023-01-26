@@ -1,0 +1,9 @@
+{
+  "C_Cpp.intelliSenseEngine": "Tag Parser",
+  "files.associations": {
+    "gpio.h": "c"
+  },
+  "idf.port": "/dev/ttyUSB0",
+  "idf.flashType": "UART",
+  "idf.adapterTargetName": "esp32"
+}
